@@ -31,6 +31,7 @@ body {
 .profile-container {
   background-color: #eaeaea;
   padding: 4px 8px;
+  height: 60px;
 }
 .profile-img-container {
   flex-basis: 18%;
@@ -64,6 +65,9 @@ body {
 
 /* navbar dei contatti */
 /* barra di ricerca dei contatti */
+.contacts-navbar {
+  height: calc(100% - 181px);
+}
 .contacts-search-container {
   background-color: #eaeaea;
   padding: 8px;
@@ -79,4 +83,25 @@ body {
   background-color: white;
   color: #b1b1b1;
   font-size: 16px;
+}
+.contacts-list {
+  overflow-y: auto;
+  height: 100%;
+}
+/* stili dei contatti */
+.contact-img-container {
+  flex-basis: 20%;
+}
+.contact {
+}
+/* stili per la zona di destra  */
+.current-contact-info {
+  height: 60px;
+}
+.chat {
+  background-image: url(../img/mine.jpg);
+  flex-grow: 1;
+}
+.chat-nav {
+  height: 60px;
 }

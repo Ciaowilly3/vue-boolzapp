@@ -23,7 +23,7 @@
     <!-- do a body e green bar gli stili per lo sfondo -->
     <div class="green-bar"></div>
     <!-- divido l'interface in due contenitori -->
-    <div class="interface-container d-flex">
+    <div class="interface-container d-flex" id="app">
       <div class="left-container d-flex flex-column">
         <div class="profile-container d-flex justify-content-between">
           <!-- contenitore per foto profilo -->
@@ -66,9 +66,28 @@
               <input type="text" placeholder="Cerca o inizia una nuova chat" />
             </div>
           </div>
+          <div class="contacts-list d-flex flex-column">
+            <div
+              class="contact w-100 d-flex"
+              v-for="eachContact,contactIndex in avatarsArray"
+            >
+              <div class="contact-img-container">
+                <img
+                  :src="avatarPicBuilder(contactIndex)"
+                  alt=""
+                  class="w-100 d-block"
+                />
+              </div>
+              {{eachContact.name}}
+            </div>
+          </div>
         </nav>
       </div>
-      <div class="right-container"></div>
+      <div class="right-container d-flex flex-column">
+        <div class="current-contact-info"></div>
+        <div class="chat"></div>
+        <nav class="chat-nav"></nav>
+      </div>
     </div>
     <script src="js/main.js"></script>
   </body>
