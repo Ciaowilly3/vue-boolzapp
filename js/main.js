@@ -3,6 +3,7 @@ const { createApp } = Vue;
 const app = createApp({
   data() {
     return {
+      currentContact: null,
       avatarsArray: [
         {
           name: "Michele",
@@ -95,5 +96,8 @@ const app = createApp({
       buildedSrc = "img/avatar" + this.avatarsArray[index].avatar + ".jpg";
       return buildedSrc;
     },
+  },
+  beforeMount() {
+    this.currentContact = this.avatarsArray[0];
   },
 }).mount("#app");

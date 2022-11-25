@@ -1,3 +1,11 @@
+.rounded-img-container {
+  object-fit: contain;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-basis: 64px;
+  aspect-ratio: 1 / 1;
+}
+
 /* stili per la parte in secondo piano */
 body {
   background-color: #d9dbd5;
@@ -21,7 +29,6 @@ body {
 /* contenitori interni */
 .left-container {
   flex-basis: 35%;
-  border-right: 1px solid black;
   height: 100%;
 }
 .right-container {
@@ -32,6 +39,7 @@ body {
   background-color: #eaeaea;
   padding: 4px 8px;
   height: 60px;
+  border-right: 1px solid rgb(201, 201, 201);
 }
 .profile-img-container {
   flex-basis: 18%;
@@ -66,7 +74,8 @@ body {
 /* navbar dei contatti */
 /* barra di ricerca dei contatti */
 .contacts-navbar {
-  height: calc(100% - 181px);
+  display: flex;
+  flex-direction: column;
 }
 .contacts-search-container {
   background-color: #eaeaea;
@@ -85,23 +94,46 @@ body {
   font-size: 16px;
 }
 .contacts-list {
-  overflow-y: auto;
-  height: 100%;
+  overflow-y: scroll;
+  flex-grow: 1;
 }
 /* stili dei contatti */
 .contact-img-container {
   flex-basis: 20%;
 }
 .contact {
+  border-bottom: 1px solid rgb(233, 233, 233);
 }
 /* stili per la zona di destra  */
+/* parte di sopra */
 .current-contact-info {
   height: 60px;
+  background-color: #eaeaea;
 }
+.current-contact-img-container {
+  width: 50px;
+}
+/* chat */
 .chat {
   background-image: url(../img/mine.jpg);
   flex-grow: 1;
 }
 .chat-nav {
   height: 60px;
+  background-color: #f3eeea;
+  border-left: 1px solid rgb(195, 194, 194);
+}
+/* nav di sotto */
+.message-input {
+  border: none;
+  border-radius: 8px;
+}
+.chat-nav .icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 24px;
+  flex-shrink: 0;
+  color: #767575;
+  font-size: 20px;
 }

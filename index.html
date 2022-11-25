@@ -68,25 +68,59 @@
           </div>
           <div class="contacts-list d-flex flex-column">
             <div
-              class="contact w-100 d-flex"
+              class="contact w-100 d-flex py-2 ps-3"
               v-for="eachContact,contactIndex in avatarsArray"
+              @click="(currentContact = eachContact)"
             >
-              <div class="contact-img-container">
+              <div class="rounded-img-container">
                 <img
-                  :src="avatarPicBuilder(contactIndex)"
+                  :src="`img/avatar${eachContact.avatar}.jpg ` "
                   alt=""
                   class="w-100 d-block"
                 />
               </div>
-              {{eachContact.name}}
+              <div class="name-container p-2">{{eachContact.name}}</div>
             </div>
           </div>
         </nav>
       </div>
+      <!-- inizio la parte di destra -->
       <div class="right-container d-flex flex-column">
-        <div class="current-contact-info"></div>
+        <div
+          class="current-contact-info d-flex justify-content-between px-2 py-1"
+        >
+          <div class="current-contact-img-container d-flex">
+            <img
+              :src="`img/avatar${currentContact.avatar}.jpg`"
+              alt=""
+              class="d-block w-100 rounded-circle"
+            />
+            <div>{{currentContact.name}}</div>
+          </div>
+          <div
+            class="profile-commands-container d-flex align-items-center gap-3 pe-2"
+          >
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-paperclip"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
+        </div>
         <div class="chat"></div>
-        <nav class="chat-nav"></nav>
+        <nav class="chat-nav d-flex justify-content-around">
+          <div class="icon-container">
+            <i class="fa-regular fa-face-smile"></i>
+          </div>
+          <div class="form-group flex-fill d-flex align-items-center">
+            <input
+              type="text"
+              class="message-input form-control"
+              placeholder="Scrivi un messaggio"
+            />
+          </div>
+          <div class="icon-container">
+            <i class="fa-solid fa-microphone"></i>
+          </div>
+        </nav>
       </div>
     </div>
     <script src="js/main.js"></script>
