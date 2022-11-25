@@ -99,6 +99,15 @@ const app = createApp({
         status: "sent",
       });
     },
+    receiveNewMessage() {
+      setTimeout(() => {
+        this.currentContact.messages.push({
+          date: "Date",
+          message: "ok bro",
+          status: "received",
+        });
+      }, 1000);
+    },
   },
   beforeMount() {
     this.currentContact = this.avatarsArray[0];

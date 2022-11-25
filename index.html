@@ -127,7 +127,7 @@
               class="message-input form-control"
               placeholder="Scrivi un messaggio"
               v-model="newMessage"
-              @keyup.enter="sendNewMessage(newMessage)"
+              @keyup.enter="sendNewMessage(newMessage), receiveNewMessage()"
             />
           </div>
           <div class="icon-container">
