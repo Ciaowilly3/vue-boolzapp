@@ -98,6 +98,7 @@ body {
 }
 .contacts-list {
   overflow-y: scroll;
+  overflow-x: hidden;
   flex-grow: 1;
 }
 /* stili dei contatti */
@@ -106,6 +107,10 @@ body {
 }
 .contact {
   border-bottom: 1px solid rgb(233, 233, 233);
+}
+.contact:active {
+  background-color: #eaeaea;
+  scale: 1.01;
 }
 /* stili per la zona di destra  */
 /* parte di sopra */

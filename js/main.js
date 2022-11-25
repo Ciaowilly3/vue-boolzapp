@@ -3,6 +3,7 @@ const { createApp } = Vue;
 const app = createApp({
   data() {
     return {
+      newMessage: "",
       currentContact: null,
       avatarsArray: [
         {
@@ -92,12 +93,15 @@ const app = createApp({
     };
   },
   methods: {
-    sendNewMessage(text) {
+    sendNewMessage() {
       this.currentContact.messages.push({
         date: "Date",
-        message: text,
+        message: this.newMessage,
         status: "sent",
       });
+      this.newMessage = "";
+
+      this.receiveNewMessage();
     },
     receiveNewMessage() {
       setTimeout(() => {
