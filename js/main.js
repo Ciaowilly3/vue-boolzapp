@@ -92,9 +92,12 @@ const app = createApp({
     };
   },
   methods: {
-    avatarPicBuilder(index) {
-      buildedSrc = "img/avatar" + this.avatarsArray[index].avatar + ".jpg";
-      return buildedSrc;
+    sendNewMessage(text) {
+      this.currentContact.messages.push({
+        date: "Date",
+        message: text,
+        status: "sent",
+      });
     },
   },
   beforeMount() {

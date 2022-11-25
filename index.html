@@ -105,7 +105,18 @@
             <i class="fa-solid fa-ellipsis-vertical"></i>
           </div>
         </div>
-        <div class="chat"></div>
+        <!-- chat -->
+        <div class="chat">
+          <div
+            v-for="msg in currentContact.messages"
+            class="message"
+            class=""
+            :class="(msg.status === 'sent') ? 'message-sent' : '' "
+          >
+            {{msg.message}}
+          </div>
+        </div>
+        <!-- zona sotto la chat per input -->
         <nav class="chat-nav d-flex justify-content-around">
           <div class="icon-container">
             <i class="fa-regular fa-face-smile"></i>
@@ -115,6 +126,8 @@
               type="text"
               class="message-input form-control"
               placeholder="Scrivi un messaggio"
+              v-model="newMessage"
+              @keyup.enter="sendNewMessage(newMessage)"
             />
           </div>
           <div class="icon-container">
