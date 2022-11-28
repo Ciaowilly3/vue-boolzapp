@@ -5,6 +5,8 @@ const app = createApp({
     return {
       newMessage: "",
       currentContact: null,
+      contactSearch: "",
+      filteredArray: [{}],
       avatarsArray: [
         {
           name: "Michele",
@@ -112,8 +114,18 @@ const app = createApp({
         });
       }, 1000);
     },
+    getFilteredList() {
+      this.filteredArray = this.avatarsArray.filter((user) => {
+        return user.name
+          .toLowerCase()
+          .includes(this.contactSearch.toLowerCase());
+      });
+    },
   },
   beforeMount() {
     this.currentContact = this.avatarsArray[0];
+  },
+  mounted() {
+    this.filteredArray = this.avatarsArray;
   },
 }).mount("#app");

@@ -17,6 +17,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.1.0/build/global/luxon.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
@@ -63,13 +64,19 @@
             <div>
               <i class="fa-solid fa-magnifying-glass py-2 px-5"></i>
 
-              <input type="text" placeholder="Cerca o inizia una nuova chat" />
+              <input
+                type="text"
+                placeholder="Cerca o inizia una nuova chat"
+                v-model="contactSearch"
+                @input="getFilteredList"
+              />
             </div>
           </div>
           <div class="contacts-list d-flex flex-column">
             <div
               class="contact w-100 d-flex py-2 ps-3"
               v-for="eachContact,contactIndex in avatarsArray"
+              :class="(!filteredArray.includes(eachContact)) ? 'd-none' : '' "
               @click="(currentContact = eachContact)"
             >
               <div class="rounded-img-container">
