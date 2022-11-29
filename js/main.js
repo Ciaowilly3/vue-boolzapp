@@ -3,10 +3,12 @@ const { createApp } = Vue;
 const app = createApp({
   data() {
     return {
+      dt: new Date(),
       newMessage: "",
       currentContact: null,
       contactSearch: "",
       filteredArray: [{}],
+      show: false,
       avatarsArray: [
         {
           name: "Michele",
@@ -97,7 +99,7 @@ const app = createApp({
   methods: {
     sendNewMessage() {
       this.currentContact.messages.push({
-        date: "Date",
+        date: this.dt.toLocaleString(),
         message: this.newMessage,
         status: "sent",
       });
@@ -108,7 +110,7 @@ const app = createApp({
     receiveNewMessage() {
       setTimeout(() => {
         this.currentContact.messages.push({
-          date: "Date",
+          date: this.dt.toLocaleString(),
           message: "ok bro",
           status: "received",
         });
@@ -120,6 +122,9 @@ const app = createApp({
           .toLowerCase()
           .includes(this.contactSearch.toLowerCase());
       });
+    },
+    showInfo(msgIndex) {
+      this.show = true;
     },
   },
   beforeMount() {

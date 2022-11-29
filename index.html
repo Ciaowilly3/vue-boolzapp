@@ -115,12 +115,21 @@
         <!-- chat -->
         <div class="chat">
           <div
-            v-for="msg in currentContact.messages"
-            class="message"
-            class=""
+            v-for="msg,i in currentContact.messages"
+            class="message d-flex justify-content-between position-relative"
             :class="(msg.status === 'sent') ? 'message-sent' : '' "
           >
             {{msg.message}}
+            <button class="btn-flush" @click="showInfo(i)">
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div
+              class="msg-info position-absolute text-center"
+              :class="(!show) ? 'd-none' : 'd-block' "
+            >
+              <small>Informazioni sul messaggio</small>
+              <button class="btn-flush">Elimina messaggio</button>
+            </div>
           </div>
         </div>
         <!-- zona sotto la chat per input -->

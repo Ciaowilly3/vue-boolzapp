@@ -145,10 +145,27 @@ body {
   min-width: 30%;
   padding: 16px 8px;
   border-radius: 12px;
+  margin-bottom: 24px;
 }
 .message-sent {
   align-self: flex-end;
   background-color: #d5f9ba;
+}
+.msg-info {
+  top: 65%;
+  right: -32px;
+  width: 192px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  border: 1px solid aliceblue;
+}
+.btn-flush {
+  background-color: transparent;
+  color: #767575;
+  border: none;
+  font-size: 14px;
 }
 /* nav di sotto */
 .message-input {
