@@ -77,7 +77,7 @@
               class="contact w-100 d-flex py-2 ps-3"
               v-for="eachContact,contactIndex in avatarsArray"
               :class="(!filteredArray.includes(eachContact)) ? 'd-none' : '' "
-              @click="(currentContact = eachContact)"
+              @click="(currentContact = eachContact, currentMessageIndex = null)"
             >
               <div class="rounded-img-container">
                 <img

@@ -3,6 +3,7 @@ const { createApp } = Vue;
 const app = createApp({
   data() {
     return {
+      show: false,
       dt: new Date(),
       newMessage: "",
       currentContact: null,
@@ -124,7 +125,16 @@ const app = createApp({
       });
     },
     showInfo(msgIndex) {
-      this.currentMessageIndex = msgIndex;
+      if (this.show) {
+        this.show = false;
+      } else {
+        this.show = true;
+      }
+      if (!this.show) {
+        this.currentMessageIndex = null;
+      } else if (this.show) {
+        this.currentMessageIndex = msgIndex;
+      }
     },
   },
   beforeMount() {
