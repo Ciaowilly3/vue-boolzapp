@@ -79,6 +79,7 @@ body {
 .contacts-navbar {
   display: flex;
   flex-direction: column;
+  height: calc(100% - 133px);
 }
 .contacts-search-container {
   background-color: #eaeaea;
