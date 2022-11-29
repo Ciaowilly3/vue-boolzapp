@@ -8,7 +8,7 @@ const app = createApp({
       currentContact: null,
       contactSearch: "",
       filteredArray: [{}],
-      show: false,
+      currentMessageIndex: null,
       avatarsArray: [
         {
           name: "Michele",
@@ -124,7 +124,7 @@ const app = createApp({
       });
     },
     showInfo(msgIndex) {
-      this.show = true;
+      this.currentMessageIndex = msgIndex;
     },
   },
   beforeMount() {
