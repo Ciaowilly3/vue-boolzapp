@@ -128,7 +128,9 @@
               class="msg-info position-absolute text-center"
             >
               <small>Informazioni sul messaggio</small>
-              <button class="btn-flush">Elimina messaggio</button>
+              <button class="btn-flush" @click="messageDelete(i)">
+                Elimina messaggio
+              </button>
             </div>
           </div>
         </div>

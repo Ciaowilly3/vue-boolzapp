@@ -136,6 +136,9 @@ const app = createApp({
         this.currentMessageIndex = msgIndex;
       }
     },
+    messageDelete(currentMessageIndex) {
+      this.currentContact.messages.splice(currentMessageIndex, 1);
+    },
   },
   beforeMount() {
     this.currentContact = this.avatarsArray[0];
